@@ -1,0 +1,49 @@
+<div class="container">
+  <h3>Add Event</h3>
+  <form action="/user/<%= @user.id %>/event" method="post">
+
+    <label for="title">TITLE:</label>
+    <input type="text" name="event[title]" value="" />
+    <br>
+
+    <label for="description">Description:</label>
+    <input type="text" name="event[description]" value="" />
+    <br>
+
+    <label for="date">Date of Event:</label>
+    <input type="text" name="event[date_of_event]" value="" />
+    <br>
+
+    <label for="time">Time of Event:</label>
+    <input type="text" name="event[time_of_event]" value="" />
+    <br>
+
+    <label for="time">Address:</label>
+    <input type="address" name="event[address]" value="" />
+    <br>
+
+    <label for="time">City:</label>
+    <input type="city" name="event[city]" value="" />
+    <br>
+
+    <label for="time">State:</label>
+    <input type="state" name="event[state]" value="" />
+    <br>
+
+    <label for="length">Length of Event:</label>
+    <input type="text" name="event[length_of_event]" value="" />
+    <br>
+
+    <label for="threshold">Participants Threshold:</label>
+    <input type="text" name="event[participants_thresh]" value="" />
+    <br>
+
+    <label for="tage">Tags:</label>
+    <input type="text" name="event[tags]" value="" /><br>
+    <p><span style="font-size: .85em">Drag and drop the tags below into the Tags above.</span></p>
+    <img src = "/images/tg-creative.png">&nbsp;<img src = "/images/tg-tech.png">&nbsp;<img src = "/images/tg-manual.png"><br><br>
+
+    <input type = "submit" value="Add Event">
+
+  </form>
+</div>

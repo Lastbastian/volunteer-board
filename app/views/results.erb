@@ -1,0 +1,6 @@
+<div class="container">
+  <h3>Your search results on "<%= params[:event][:tags] %>" returned:</h3>
+  <% @events.each do |event| %>
+    <a href = "/event/<%= event.id %>"><%= event.title %></a> - starts at <%= event.time_of_event %> on <%= event.date_of_event %><br>
+  <% end %>
+</div>

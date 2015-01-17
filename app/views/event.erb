@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="box col-md-8">
+      <h4><%= @event.title %></h4>
+      <% if session[:user_id] == @event.user_id %><a href="/event/<%= @event.id %>/edit">Edit Event</a><% end %>
+      <p><strong>Posted by:</strong></p>
+      <p><%= @user.username %></p>
+      <p><strong>Description:</strong></p>
+      <p><%= @event.description %></p>
+      <p><strong>Date:</strong><br>
+      <%= @event.date_of_event %></p>
+      <p><strong>Time:</strong><br>
+      <%= @event.time_of_event %></p>
+      <p><strong>Length</strong><br>
+      <%= @event.length_of_event %></p>
+      <p><strong>Volunteers:</strong><br>
+      <%= @event.participants %></p><!-- this should link to the participant or show them -->
+      <p><strong>Threshold:</strong><br>
+      <%= @event.participants_thresh %></p>
+      <p><strong>Tags:</strong><br>
+      <%= @event.tags %></p>
+      <% if session[:user_id] == @event.user_id %>
+        <form action="/event/<%= @event.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete">
+        </form>
+      <% end %>
+    </div>
+    <div class="box col-md-4">
+      <div class="mapelement">
+        <br>
+        <iframe width="341" height="256" frameborder="0" style="border: 0;" src="https://www.google.com/maps/embed/v1/place?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&q=<%= EventHelper.url_escaped(@event) %>"></iframe>
+      </div><br>
+      <% if session[:user_id] != @event.user_id %>
+      <form action="/event/<%= @event.id %>/volunteer" method="post">
+        <input type="hidden" name="_method" value="put">
+          <input type="submit" value="Volunteer">
+        </form>
+      <% end %>
+    </div>
+</div>

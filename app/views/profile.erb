@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="box col-md-7">
+      <h3>Welcome back <%= @user.first_name %></h3><br><br>
+      <h4>Your profile information:&nbsp;&nbsp;Edit<h4>
+        <p>
+        First Name:<input type="text" style="width: 150px" name="user[first_name]" value="<%= @user.first_name %>" />&nbsp;Last Name:<input type="text" style="width: 150px" name="user[last_name]" value="<%= @user.last_name %>" /></p>
+        <p>Username:<input type="text" style="width: 150px" name="user[username]" value="<%= @user.username %>" />
+        Email:<input type="text" style="width: 150px" name="user[email]" value="<%= @user.email %>" /></p><br>
+      <h4>Your recent event postings...</h4>
+      <p>
+        <ul>
+          <% @user.events.each do |event| %>
+            <li><a href = "/user/<%= event.user_id %>/event/<%= event.id %>"><%= event.title %> - <%= event.date_of_event %></a></li>
+          <% end %>
+        </ul>
+      </p>
+      <br>
+      <p><a href = "/user/<%= @user.id %>/event/new">Add Event</a></p>
+    </div>
+    <div class="box col-md-5">
+      <h4>Search for volunteer opportunities:</h4>
+      <form action="/events/results" method="post">
+        <input type="text" name="event[tags]" value="" />
+        <input type="submit" value="Search">
+      </form><br><br>
+      <h4>Recent postings in your area:</h4>
+        <ul>
+          <% @other_events.each do |event| %>
+            <li><a href = "/user/<%= event.user_id %>/event/<%= event.id %>"><%= event.title %> - <%= event.date_of_event %></a></li>
+          <% end %>
+        </ul>
+      <br><br>
+      <h4>Review your past volunteers!<h4>
+        <ul>
+          <% @user.followers.each do |follower| %>
+            <li><%= follower.username %></li>
+          <% end %>
+        </ul>
+    </div>
+  </div>
+</div>

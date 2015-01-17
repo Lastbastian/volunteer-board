@@ -1,0 +1,62 @@
+body {
+  background-color: lightgrey;
+  font-family: verdana,helvetica,arial,sans-serif;
+
+}
+
+/*.container {
+  background-color: white;
+  margin: 20px auto;
+  width: 960px;
+  padding: 0px 20px 20px 30px;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px #888888;
+}*/
+
+.topLogo {
+  height: 180px;
+  background-color: white;
+  padding-left: 50px;
+  padding-top: 25px;
+}
+
+.topNav {
+  background-color: #74B446;
+  border-bottom: solid;
+  border-bottom-color: #4B9123;
+  height: 50px;
+  text-align: right;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-top: 6px;
+  font-family: font-family: ‘Trebuchet MS’, Helvetica, sans-serif;
+  font-size: 1.75em;
+
+}
+
+p {
+  font-size: 1em;
+}
+
+th {
+  text-align: left;
+}
+
+ul {
+  list-style: none;
+
+}
+
+/*----FOR BOOTSTRAP*/
+.container {
+  background-color: #F7F7F2;
+  height: 550px;
+}
+
+.box {
+  background-color: #F7F7F2;
+  height: 180px;
+
+
+}
